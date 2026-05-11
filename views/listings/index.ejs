@@ -1,0 +1,108 @@
+<%- layout("./layouts/boilerplate.ejs") %>
+
+<div class="container mt-4">
+
+  <!-- Filter Bar -->
+  <div id="filters">
+    <div class="filter">
+      <div><i class="fa-solid fa-fire"></i></div>
+      <p>Trending</p>
+    </div>
+    <div class="filter">
+      <div><i class="fa-solid fa-bed"></i></div>
+      <p>Rooms</p>
+    </div>
+    <div class="filter">
+      <div><i class="fa-solid fa-city"></i></div>
+      <p>Iconic Cities</p>
+    </div>
+    <div class="filter">
+      <div><i class="fa-solid fa-mountain"></i></div>
+      <p>Mountains</p>
+    </div>
+    <div class="filter">
+      <div><i class="fa-solid fa-chess-rook"></i></div>
+      <p>Castles</p>
+    </div>
+    <div class="filter">
+      <div><i class="fa-solid fa-person-swimming"></i></div>
+      <p>Amazing Pools</p>
+    </div>
+    <div class="filter">
+      <div><i class="fa-solid fa-campground"></i></div>
+      <p>Camping</p>
+    </div>
+    <div class="filter">
+      <div><i class="fa-solid fa-tractor"></i></div>
+      <p>Farms</p>
+    </div>
+
+<!-- Hidden filters -->
+<div id="extra-filters" style="display:none; align-items:center; gap:2rem;">
+  <div class="filter">
+    <div><i class="fa-solid fa-snowflake"></i></div>
+    <p>Arctic</p>
+  </div>
+  <div class="filter">
+    <div><i class="fa-solid fa-umbrella-beach"></i></div>
+    <p>Beach</p>
+  </div>
+  <div class="filter">
+    <div><i class="fa-solid fa-tree"></i></div>
+    <p>Forest</p>
+  </div>
+  <div class="filter">
+    <div><i class="fa-solid fa-water"></i></div>
+    <p>Lake</p>
+  </div>
+  <div class="filter">
+    <div><i class="fa-solid fa-star"></i></div>
+    <p>Top Rated</p>
+  </div>
+</div>
+
+  <!-- 3 dots More button -->
+<div class="filter" id="more-btn">
+  <div><i class="fa-solid fa-ellipsis"></i></div>
+  <p>More</p>
+</div>
+
+    <!-- Tax Toggle -->
+    <div class="tax-toggle d-flex flex-column align-items-center justify-content-center ms-3"
+      style="min-width:160px; border-left: 1.5px solid #bbb; padding-left: 1.5rem; flex-shrink:0;">
+      <div class="form-check form-switch mb-0">
+        <input class="form-check-input" type="checkbox" role="switch"
+          id="flexSwitchCheckDefault" onclick="toggleTax()" />
+        <label class="form-check-label" for="flexSwitchCheckDefault"
+          style="font-size:0.75rem; font-weight:500; white-space:nowrap; cursor:pointer;">
+          Display total after taxes
+        </label>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Listings Grid -->
+  <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-3 g-4 mt-2">
+    <% for (let list of alllistings) { %>
+      <a href="/listings/<%=list._id%>" class="list-link">
+        <div class="col">
+          <div class="card h-100 shadow-sm listing-card">
+            <img src="<%= list.image.url %>" class="card-img-top card-img-fixed" alt="Image">
+            <div class="card-img-overlay"></div>
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title"><%= list.title %></h5>
+              <p class="card-text text-muted"><%= list.description %></p>
+              <p class="mt-auto text-success card-price" data-base="<%= list.price %>">
+                <strong>₹<%= list.price.toLocaleString('en-IN') %></strong>
+                <span class="gst-label" style="display:none; font-size:0.7rem; color:gray;"> +18% GST</span>
+              </p>
+              <p class="text-secondary"><%= list.location %>, <%= list.country %></p>
+            </div>
+          </div>
+        </div>
+      </a>
+    <% } %>
+  </div>
+
+</div>

@@ -1,0 +1,94 @@
+<nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top">
+  <div class="container-fluid">
+
+    <!-- Logo -->
+    <a class="navbar-brand" href="/listings">
+      <i class="fa-regular fa-compass"></i>
+    </a>
+
+    <!-- Mobile Toggle -->
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNavAltMarkup"
+      aria-controls="navbarNavAltMarkup"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Navbar Content -->
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+
+      <!-- Left Nav -->
+      <div class="navbar-nav">
+        <a class="nav-link" href="/listings">Explore</a>
+      </div>
+
+      <!-- Search Bar -->
+      <form class="d-flex search-bar mx-auto" role="search">
+
+        <input
+          class="form-control me-2 search-inp"
+          type="search"
+          placeholder="Search destinations"
+          aria-label="Search"
+        >
+
+        <button class="btn btn-search" type="submit">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          Search
+        </button>
+
+      </form>
+
+      <!-- Right Nav -->
+      <div class="navbar-nav ms-auto align-items-center">
+
+        <a class="nav-link add-place-btn" href="/listings/new">
+          Add your place
+        </a>
+
+        <% if (typeof currUser !== "undefined" && currUser) { %>
+
+          <a class="nav-link logout-btn" href="/users/logout">
+            <b>Log-Out</b>
+          </a>
+
+        <% } else { %>
+
+          <a class="nav-link signup-btn" href="/users/register">
+            <b>Sign-Up</b>
+          </a>
+
+          <a class="nav-link login-btn" href="/users/login">
+            <b>Log-In</b>
+          </a>
+
+        <% } %>
+
+        <!-- Dark Mode Button -->
+        <button
+          id="theme-toggle"
+          onclick="toggleTheme()"
+          style="
+            background:none;
+            border:1px solid #ccc;
+            border-radius:20px;
+            padding:5px 12px;
+            cursor:pointer;
+            display:flex;
+            align-items:center;
+            gap:6px;
+            margin-left:10px;
+          "
+        >
+          <i id="theme-icon" class="fa-solid fa-moon"></i>
+        </button>
+
+      </div>
+    </div>
+  </div>
+</nav>
