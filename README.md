@@ -95,23 +95,30 @@ Wanderlust
 
 ---
 
+
 # 📸 Application Screenshots
 
 ## 🏠 Home Page
 
-![Home](screenshots/home.png)
+![Home](screenshots/Screenshot%202026-08-02%20164309.png)
 
 ---
 
-## 📝 Add New Listing
+## 🏠 Home Page (Display Price)
 
-![Add Listing](screenshots/add-listing.png)
+![Home Price](screenshots/Screenshot%202026-08-02%20164407.png)
 
 ---
 
-## 🏡 Listing Details
+## ➕ Add New Listing
 
-![Listing Details](screenshots/details.png)
+![Add Listing](screenshots/Screenshot%202026-08-02%20165158.png)
+
+---
+
+## 🏡 Listing Details, Reviews & Map
+
+![Listing Details](screenshots/Screenshot%202026-08-02%20165431.png)
 
 ---
 
@@ -121,27 +128,10 @@ Wanderlust
 
 ---
 
-## ⭐ Reviews & Ratings
+## 📂 Project Structure
 
-![Reviews](screenshots/reviews.png)
+![Folder Structure](screenshots/folder_structure.png)
 
----
-
-## 🗺️ Interactive Map
-
-![Map](screenshots/map.png)
-
----
-
-## 🔍 Search Functionality
-
-![Search](screenshots/search.png)
-
----
-
-## 📱 Responsive UI
-
-![Responsive](screenshots/mobile.png)
 
 ---
 
